@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Main = (props) => {
+export const Main = () => {
   return (
     <></>
   )
