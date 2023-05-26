@@ -2,6 +2,14 @@ import React from "react";
 
 interface CardProps {
     card : any
+    // card : {
+    //     images: {
+    //         large : string
+    //     }
+    //     name : string,
+    //     types: string[]
+        
+    // }
 }
 
 const PokemonCard: React.FC<CardProps> = ({ card } : CardProps ) => {
