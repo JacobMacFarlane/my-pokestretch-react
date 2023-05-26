@@ -1,5 +1,6 @@
 import React from "react";
 
+
 type CardProps = {
     obj: {
         images: {
@@ -23,3 +24,4 @@ const PokemonCard: React.FC<CardProps> = ({ obj }) => {
 }
 
 export default PokemonCard
+
