@@ -1,23 +1,24 @@
 import React from "react";
 
-
-type CardProps = {
-    obj: {
-        images: {
-            large: string
-        }
-        name: string
-        types: string[]
-    }
+interface CardProps {
+    card : any
+    // card : {
+    //     images: {
+    //         large : string
+    //     }
+    //     name : string,
+    //     types: string[]
+        
+    // }
 }
 
-const PokemonCard: React.FC<CardProps> = ({ obj }) => {
+const PokemonCard: React.FC<CardProps> = ({ card } : CardProps ) => {
     return (
         <div>
-            <img src={obj.images.large} alt={obj.name} height="100px" />
+            <img src={card.images.large} alt={card.name} height="100px" />
             <div className="cardInfo">
-                <h1>{obj.name}</h1>
-                <p>{obj.types}</p>
+                <h1>{card.name}</h1>
+                <p>{card.types}</p>
             </div>
         </div>
     )
