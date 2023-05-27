@@ -5,6 +5,7 @@ export type PokeCard = {
   image: string
   name : string,
   types: string[]
+  cardId: string
 }
 
 interface MainProps {
@@ -12,8 +13,9 @@ interface MainProps {
 }
 
 export const Main: React.FC<MainProps>  = (props : MainProps) => {
-  const cards = props.data.map((pokemon : PokeCard) => {
-    return <PokemonCard card={ pokemon } />
+  console.log(props, 'inside main')
+  const cards = props.data.map((pokemon : PokeCard, index: number) => {
+    return <PokemonCard key={pokemon.cardId} card={ pokemon } />
   })
 
   return (
