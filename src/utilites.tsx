@@ -1,4 +1,5 @@
 export type PokeCard = {
+  id: string
   images: {
     large : string
   }
@@ -11,7 +12,8 @@ export const cleanData = (data: PokeCard[]) => {
     return {
       image: card.images.large,
       name: card.name,
-      types: card.types
+      types: card.types,
+      cardId: card.id
     }
   })
 }
