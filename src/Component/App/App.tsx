@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
+import { cleanData, PokeCard } from '../../utilites';
 
 import './App.css';
+import PokemonCard from '../Card/PokemonCard';
 
 function App() {
   const [allCards, setCards] = useState([])
@@ -13,8 +15,9 @@ function App() {
     try {
       const response = await fetch('https://api.pokemontcg.io/v2/cards/');
         if (response.ok) {
-          const data  = await response.json();
-          setCards(data.data);
+          let data  = await response.json();
+          data = cleanData(data.data)
+          setCards(data);
         } else {
           throw new Error()
         }
