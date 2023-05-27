@@ -16,7 +16,7 @@
         "name": "Cluster Bolt",
         "cost": ["Lightning", "Colorless", "Colorless"],
         "convertedEnergyCost": 3,
-        "damage": "70",
+        "damage": "70", 
         "text": "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
     }],
     "weaknesses": [{

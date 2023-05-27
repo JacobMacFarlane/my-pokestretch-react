@@ -41,13 +41,11 @@ function App() {
 
   return (
     <section>
-      <header>
-        <h1>Foo</h1>
-      </header>
+      <h1>Foo</h1>
       {loading && <div>Loading...</div>}
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } /> }/>
-        {/* <Route exact path='/favorites' render={(props : any) => <Main /> }/> */}
+        <Route exact path='/favorites' render={(props : any) => <Main data={ favorites }/> }/>
       </Switch>
     </section>
   );
