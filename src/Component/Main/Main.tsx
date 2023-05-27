@@ -10,12 +10,13 @@ export type PokeCard = {
 
 interface MainProps {
   data : PokeCard[]
+  chooseCard: any
 }
 
 export const Main: React.FC<MainProps>  = (props : MainProps) => {
   console.log(props, 'inside main')
   const cards = props.data.map((pokemon : PokeCard, index: number) => {
-    return <PokemonCard key={pokemon.cardId} card={ pokemon } />
+    return <PokemonCard key={pokemon.cardId} card={ pokemon } chooseCard={props.chooseCard}/>
   })
 
   return (

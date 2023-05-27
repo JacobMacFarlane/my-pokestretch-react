@@ -4,10 +4,17 @@ import { PokeCard } from "../Main/Main";
 
 type CardProps = {
     card : PokeCard
+    chooseCard: (PokeCard: {}) => void
 }
 
-const PokemonCard: React.FC<CardProps> = ({ card } : CardProps ) => {
+const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
     const [favorited, setFavorite ] = useState(false)
+    const { card, chooseCard } = props
+    const handleEvent =  () => {
+        setFavorite(true)
+        chooseCard(card)
+    }
+
     return (
         <div>
             <img src={card.image} alt={card.name} height="100px" />
@@ -18,7 +25,7 @@ const PokemonCard: React.FC<CardProps> = ({ card } : CardProps ) => {
             { favorited === true ? <>the Button works</> : null }
             <button 
             name={card.name} 
-            onClick={()=> setFavorite(true)}>Favorite</button>
+            onClick={()=> handleEvent()} >Favorite</button>
         </div>
     )
 }
