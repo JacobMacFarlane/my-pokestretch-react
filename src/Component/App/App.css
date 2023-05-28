@@ -1,9 +1,16 @@
-.App {
+/* * {
+  border: 1px solid green;
+} */
+
+.main {
   text-align: center;
+  font-family: Pokemon Classic;
+  background-color: antiquewhite;
+  height: 100vh;
+  
 }
 
 .main-container {
-  font-family: Pokemon Classic;
   font-size: 0.5em;
   display: flex;
   flex-wrap: wrap;
@@ -20,3 +27,4 @@
 .type {
   font-size: 0.5em;
 }
+
