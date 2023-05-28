@@ -8,7 +8,7 @@ import PokemonCard from '../Card/PokemonCard';
 
 function App() {
   const [allCards, setCards] = useState([])
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState<PokeCard[]>([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
  
@@ -24,17 +24,17 @@ function App() {
         } else {
           throw new Error()
         }
-        console.log(allCards, 'in app')
     }
     catch (error) {
       console.error('Error:', error);
     }
   }
-//  const choseFavorite = ( event: Event) => {
-//   event.preventDefault()
-//   {name, img, types} = event
-//   setFavorites([...favorites, event] )
-//  }
+  const chooseCard = ( pokemon: PokeCard ) => {
+    const newFavState = [...favorites, pokemon]
+    setFavorites(newFavState)
+    console.log(favorites, 'this is favorites!!')
+    console.log(allCards, 'allcards')
+   }
   useEffect(()=> {
     fetchAllCards()
   }, [] )
@@ -44,8 +44,8 @@ function App() {
       <h1>Foo</h1>
       {loading && <div>Loading...</div>}
       <Switch> 
-        <Route exact path='/' render={(props : {}) => <Main data={ allCards } /> }/>
-        <Route exact path='/favorites' render={(props : any) => <Main data={ favorites }/> }/>
+        <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard}/> }/>
+        {/* <Route exact path='/favorites' render={(props : {}) => <Main favs={ favorites } chooseCard={chooseCard}/> }/> */}
       </Switch>
     </section>
   );
