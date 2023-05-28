@@ -40,11 +40,10 @@ function App() {
   }, [] )
 
   return (
+      // <Header />
+
     <section>
-      <header>
-        <h1>Foo</h1>
-      </header>
-      {loading && <div>Loading...</div>}
+      {loading && <div className='loading-text'>Loading...</div>}
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard} /> }/>
         {/* <Route exact path='/favorites' render={(props : any) => <Main /> }/> */}
@@ -54,3 +53,8 @@ function App() {
 }
 
 export default App;
+
+// create error componenet w/ return button
+// css
+// form component
+// cypress

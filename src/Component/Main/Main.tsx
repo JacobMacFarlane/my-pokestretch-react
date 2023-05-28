@@ -20,7 +20,7 @@ export const Main: React.FC<MainProps>  = (props : MainProps) => {
   })
 
   return (
-    <main>
+    <main className="main-container">
       { cards }
     </main>
   )
