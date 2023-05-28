@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import PokemonCard from "../Card/PokemonCard";
 
 export type PokeCard = {
@@ -21,6 +22,9 @@ export const Main: React.FC<MainProps>  = (props : MainProps) => {
 
   return (
     <main>
+      <nav>
+        <NavLink to="/favorites">Favorites</NavLink> 
+      </nav>
       { cards }
     </main>
   )

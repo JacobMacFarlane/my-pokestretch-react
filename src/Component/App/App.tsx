@@ -8,7 +8,7 @@ import PokemonCard from '../Card/PokemonCard';
 
 function App() {
   const [allCards, setCards] = useState([])
-  const [favorites, setFavorites] = useState <PokeCard[]>([])
+  const [favorites, setFavorites] = useState([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
  
@@ -30,24 +30,22 @@ function App() {
       console.error('Error:', error);
     }
   }
- const chooseCard = ( pokemon: PokeCard ) => {
-  const newFavState = [...favorites, pokemon]
-  setFavorites(newFavState)
-  console.log(favorites, 'this is favorites!!')
- }
+//  const choseFavorite = ( event: Event) => {
+//   event.preventDefault()
+//   {name, img, types} = event
+//   setFavorites([...favorites, event] )
+//  }
   useEffect(()=> {
     fetchAllCards()
   }, [] )
 
   return (
     <section>
-      <header>
-        <h1>Foo</h1>
-      </header>
+      <h1>Foo</h1>
       {loading && <div>Loading...</div>}
       <Switch> 
-        <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard} /> }/>
-        {/* <Route exact path='/favorites' render={(props : any) => <Main /> }/> */}
+        <Route exact path='/' render={(props : {}) => <Main data={ allCards } /> }/>
+        <Route exact path='/favorites' render={(props : any) => <Main data={ favorites }/> }/>
       </Switch>
     </section>
   );

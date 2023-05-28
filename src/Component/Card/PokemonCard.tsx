@@ -16,7 +16,7 @@ const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
     }
 
     return (
-        <div>
+        <div className="pokemon-card">
             <img src={card.image} alt={card.name} height="100px" />
             <div className="cardInfo">
                 <h1>{card.name}</h1>
