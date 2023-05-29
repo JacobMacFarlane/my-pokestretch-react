@@ -1,17 +1,10 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import PokemonCard from "../Card/PokemonCard";
-
-export type PokeCard = {
-  image: string
-  name : string,
-  types: string[]
-  cardId: string
-}
+import { PokeCard } from "../App/App";
 
 interface MainProps {
   data : PokeCard[]
-  favs?: PokeCard[] | undefined
   chooseCard: any
 }
 
