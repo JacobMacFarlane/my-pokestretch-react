@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
 import { cleanData, PokeCard } from '../../utilites';
-
+import { Header } from '../Header/Header';
 import './App.css';
 import PokemonCard from '../Card/PokemonCard';
 
@@ -40,9 +40,10 @@ function App() {
   }, [] )
 
   return (
-    <section>
-      <h1>Foo</h1>
-      {loading && <div>Loading...</div>}
+    <section className='main'>
+      <Header />
+      {loading && <div className='loading-text'>Loading...</div>}
+
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard}/> }/>
         {/* <Route exact path='/favorites' render={(props : {}) => <Main favs={ favorites } chooseCard={chooseCard}/> }/> */}

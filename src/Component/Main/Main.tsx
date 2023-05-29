@@ -21,7 +21,7 @@ export const Main: React.FC<MainProps>  = (props : MainProps) => {
   })
 
   return (
-    <main>
+    <main className="main-container">
       <nav>
         <NavLink to="/favorites">Favorites</NavLink> 
       </nav>
