@@ -1,4 +1,4 @@
-export type PokeCard = {
+type PokeCard = {
   id: string
   images: {
     large : string

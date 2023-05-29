@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { PokeCard } from "../Main/Main";
-
+import { PokeCard } from "../App/App";
 
 type CardProps = {
     card : PokeCard
@@ -10,9 +9,12 @@ type CardProps = {
 const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
     const [favorited, setFavorite ] = useState(false)
     const { card, chooseCard } = props
+
     const handleEvent =  () => {
-        setFavorite(true)
-        chooseCard(card)
+        if (!favorited) {
+            setFavorite(true)
+            chooseCard(card)
+        }
     }
 
     return (

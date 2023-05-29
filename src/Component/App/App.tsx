@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
-import { cleanData, PokeCard } from '../../utilites';
+import { cleanData } from '../../utilites';
 
 import './App.css';
 import PokemonCard from '../Card/PokemonCard';
+
+export type PokeCard = {
+  image: string
+  name : string,
+  types: string[]
+  cardId: string
+}
 
 function App() {
   const [allCards, setCards] = useState([])
@@ -29,7 +36,7 @@ function App() {
       console.error('Error:', error);
     }
   }
-  const chooseCard = ( pokemon: PokeCard ) => {
+  const chooseCard = ( pokemon: any ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
     console.log(favorites, 'this is favorites!!')
@@ -45,7 +52,7 @@ function App() {
       {loading && <div>Loading...</div>}
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard}/> }/>
-        {/* <Route exact path='/favorites' render={(props : {}) => <Main favs={ favorites } chooseCard={chooseCard}/> }/> */}
+        <Route exact path='/favorites' render={(props : {}) => <Main data={ favorites } chooseCard={chooseCard}/> }/>
       </Switch>
     </section>
   );
