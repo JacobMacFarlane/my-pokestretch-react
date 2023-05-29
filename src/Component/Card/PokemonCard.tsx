@@ -25,7 +25,8 @@ const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
                 <p className="type">{card.types}</p>
             </div>
             { favorited === true ? <>the Button works</> : null }
-            <button 
+            <button
+            className="favorite-button"
             name={card.name} 
             onClick={()=> handleEvent()} >Favorite</button>
         </div>
