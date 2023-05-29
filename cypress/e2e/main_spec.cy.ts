@@ -27,6 +27,8 @@ describe('Main Page', () => {
     .contains("Aerodactyl")
     cy.get('main')
     .contains("Caterpie")
+
+    cy.get('main').find('.single-card-container').should('have.lengthOf', 3)
   })
 
   it('should display the title and type for each Pokemon card', () => {
@@ -42,6 +44,7 @@ describe('Main Page', () => {
 
   it('should display each card with a favorite button', () => {
     cy.get('.favorite-button')
+      .should('be.visible') 
       .contains("Favorite")
   })
 })
