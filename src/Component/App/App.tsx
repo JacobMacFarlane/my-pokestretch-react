@@ -53,8 +53,3 @@ function App() {
 }
 
 export default App;
-
-// create error componenet w/ return button
-// css
-// form component
-// cypress

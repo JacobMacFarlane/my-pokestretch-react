@@ -8,5 +8,3 @@ export const Header = () => {
     </nav>
   )
 }
-
-//clickable to return to home

@@ -1,6 +1,7 @@
-/* * {
-  border: 1px solid green;
-} */
+* {
+  /* border: 1px solid green; */
+  margin: 0;
+}
 
 .main {
   text-align: center;
