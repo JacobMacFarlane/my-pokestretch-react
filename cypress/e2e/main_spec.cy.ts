@@ -1,6 +1,8 @@
 describe('Main Page', () => {
   beforeEach(() => {
-    cy.intercept("https://api.pokemontcg.io/v2/cards/", {fixture: "pokeData.json"})
+    cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
+      statusCode: 200,
+      fixture: "pokeData.json"})
     cy.visit("http://localhost:3000/")
   })
 
@@ -9,7 +11,7 @@ describe('Main Page', () => {
   })
 
   it('should render a heading', () => {
-    cy.contains("h1", "Foo")
+    cy.contains("h1", "POKEMON CARDS!")
   })
 
   it('should render a link to navigate to the favorites page', () => {
@@ -29,7 +31,7 @@ describe('Main Page', () => {
   })
 
   it('should display each card with a favorite button', () => {
-    cy.get('.pokemon-card')
+    cy.get('.single-card-container')
       .contains("Favorite")
   })
 })
