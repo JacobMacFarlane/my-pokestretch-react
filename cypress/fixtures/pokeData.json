@@ -1,23 +1,5 @@
-[{
-    "image": "https://images.pokemontcg.io/dp3/1_hires.png",
-    "name": "Ampharos",
-    "types": ["Lightning"],
-    "cardId": "dp3-1"
-}, 
 {
-    "image": "https://images.pokemontcg.io/ex12/1_hires.png",
-    "name": "Aerodactyl",
-    "types": ["Colorless"],
-    "cardId": "ex12-1"
-}, 
-{
-    "image": "https://images.pokemontcg.io/mcd19/1_hires.png",
-    "name": "Caterpie",
-    "types": ["Grass"],
-    "cardId": "mcd19-1"
-}]
-
-[{
+    "data": [{
     "id": "dp3-1",
     "name": "Ampharos",
     "supertype": "Pokémon",
@@ -308,4 +290,4 @@
             "reverseHoloAvg30": 1.37
         }
     }
-}]
+}]}

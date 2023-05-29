@@ -2,10 +2,8 @@ describe('Main Page', () => {
   beforeEach(() => {
     cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
       statusCode: 200,
-      fixture: "pokeData.json"}).as("pokeDataRequest");
-    cy.visit("http://localhost:3000/");
-    cy.wait("@pokeDataRequest")
-    cy.document().should("have.property", "readyState").and("eq", "complete");
+      fixture: "pokeData.json"})
+      .visit("http://localhost:3000/")
   })
 
   it('should go to a base url', () => {
@@ -29,13 +27,17 @@ describe('Main Page', () => {
     .contains("Aerodactyl")
     cy.get('main')
     .contains("Caterpie")
-    cy.get('main')
-    .should('have.length.of.at.least', 3)
   })
 
   it('should display the title and type for each Pokemon card', () => {
     cy.get('.cardInfo').eq(0).contains("Ampharos")
     cy.get('.cardInfo').eq(0).contains("Lightning")
+
+    cy.get('.cardInfo').eq(1).contains("Aerodactyl")
+    cy.get('.cardInfo').eq(1).contains("Colorless")
+
+    cy.get('.cardInfo').eq(2).contains("Caterpie")
+    cy.get('.cardInfo').eq(2).contains("Grass")
   })
 
   it('should display each card with a favorite button', () => {
