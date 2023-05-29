@@ -36,7 +36,8 @@ function App() {
       console.error('Error:', error);
     }
   }
-  const chooseCard = ( pokemon: any ) => {
+  
+  const chooseCard = ( pokemon: PokeCard ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
     console.log(favorites, 'this is favorites!!')
