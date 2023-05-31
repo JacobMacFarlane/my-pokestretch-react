@@ -63,19 +63,16 @@ describe('Main Page', () => {
       .contains("Favorite")
   })
 
-  it('should change the name of the favorite button to "Unfavorite"', () => {
+  it('should change the name of the favorite button to "Unfavorite" when button is clicked', () => {
     cy.get('.single-card-container').first()
-      .get('.favorite-button').click()
-      .contains('button', "Unfavorite")
-  })
+      .find('.favorite-button').click()
+      .should('contain', 'Unfavorite');
+  });
 
-  it('should change the name of the favorite button to "Favorite"', () => {
-    cy.get('.favorite-button')
-      .contains("Favorite")
-
+  it('should change the name of the favorite button to "Favorite" when button is clicked an even number of times', () => {
     cy.get('.single-card-container').first()
-      .get('.favorite-button').click().click()
-      .contains('button', "Favorite")
+      .find('.favorite-button').click().click()
+      .should('contain', 'Favorite');
   })
 
   it('should display a pokeball icon on the card when the card is favorited', () => {
