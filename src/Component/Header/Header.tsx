@@ -1,5 +1,7 @@
 import React from "react";
+import './Header.css'
 import { Link } from "react-router-dom"
+
 export const Header: React.FC = () => {
   return (
     <header>
@@ -11,7 +13,6 @@ export const Header: React.FC = () => {
         <h1 className="banner">POKEMON CARDS!</h1>
         <h3>Browse cards and build your deck</h3>
       </nav>
-
     </header>
   )
 }
