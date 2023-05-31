@@ -6,7 +6,7 @@ import './Main.css';
 
 interface MainProps {
   data: PokeCard[];
-  chooseCard: (pokemon: any)=> void;
+  chooseCard: (pokemon: PokeCard)=> void;
   removeFavorite: (card: PokeCard)=> void;
 }
 

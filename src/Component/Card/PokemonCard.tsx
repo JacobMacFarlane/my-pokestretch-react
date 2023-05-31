@@ -3,7 +3,7 @@ import { PokeCard } from "../App/App";
 
 type CardProps = {
     card : PokeCard
-    chooseCard: (PokeCard: {}) => void
+    chooseCard: (PokeCard: PokeCard) => void
     removeFavorite: (card : PokeCard) => void
 }
 
