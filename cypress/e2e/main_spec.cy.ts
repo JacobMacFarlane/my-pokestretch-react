@@ -10,6 +10,10 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
+  it('should ', () => {
+    cy.url().should('include', '/')
+  })
+
   it('should render a nav bar', () => {
     cy.get('.nav-header')
       .should('be.visible')
