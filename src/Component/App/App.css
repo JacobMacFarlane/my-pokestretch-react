@@ -1,6 +1,11 @@
 * {
   /* border: 1px solid green; */
   margin: 0;
+  background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_147653.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .main {
