@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const fetchAllCards = async () => {
     try {
       
-      const response = await fetch('https://api.pokemontcg.io/v2/cards/');
+      const response = await fetch('https://api.pokemontcg.io/v2/cars/');
         if (response.ok) {
           let data  = await response.json();
           data = cleanData(data.data)
@@ -34,8 +34,8 @@ const App: React.FC = () => {
         }
     }
     catch (error: any) {
-      // console.error('Error:', error);
       setError(error)
+      throw new Error(error)
     }
   }
 
