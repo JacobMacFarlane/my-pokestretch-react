@@ -10,23 +10,38 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
+  it('should render a nav bar', () => {
+    cy.get('.nav-header')
+      .should('be.visible')
+      .should('have.descendants', 'img')
+      .should('be.visible')
+  });
+
   it('should render a heading', () => {
-    cy.contains("h1", "POKEMON CARDS!")
-    cy.contains("h3", "Browse cards and build your deck")
+    cy.get('.nav-header')
+      .contains("h1", "Welcome, Trainer!")
+  
+    cy.get('.nav-header')
+      .contains("h3", "Browse cards and build your deck")
   })
 
-  it('should render a link to navigate to the favorites page', () => {
-    cy.get('nav')
-      .contains("Favorites")
+  it('should navigate to the favorites page when user clicks on favorites', () => {
+    cy.get('.fav-img').click()
+      .url().should('include', '/favorites')
+  })
+
+  it('should navigate to the home page when user clicks on "Pokemon Deck Builder"', () => {
+    cy.get('.logo-img').click()
+      .url().should('include', '/')
   })
 
   it('should display a list of Pokemon cards', () => {
     cy.get('main')
-    .contains("Ampharos")
+      .contains("Ampharos")
     cy.get('main')
-    .contains("Aerodactyl")
+      .contains("Aerodactyl")
     cy.get('main')
-    .contains("Caterpie")
+      .contains("Caterpie")
 
     cy.get('main').find('.single-card-container').should('have.lengthOf', 3)
   })
@@ -46,5 +61,12 @@ describe('Main Page', () => {
     cy.get('.favorite-button')
       .should('be.visible') 
       .contains("Favorite")
+  })
+
+  it('should display a pokeball icon on the card when the card is favorited', () => {
+    cy.get('.favorite-button').first().click()
+      .get('.single-card-container').first()
+      .should('have.descendants', 'svg')
+      .should('be.visible')
   })
 })
