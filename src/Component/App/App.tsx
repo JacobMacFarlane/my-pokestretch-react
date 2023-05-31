@@ -46,8 +46,10 @@ const App: React.FC = () => {
    }
 
    const removeFavorite = (cardToRemove : PokeCard) => {
-    const index = favorites.findIndex(card => card.cardId === cardToRemove.cardId)
-    favorites.splice(index, 1)
+    const updatedFavs = favorites.filter((card) => card.cardId !== cardToRemove.cardId)
+    setFavorites(updatedFavs)
+    // const index = favorites.findIndex(card => card.cardId === cardToRemove.cardId)
+    // favorites.splice(index, 1)
   }
 
   useEffect(()=> {
