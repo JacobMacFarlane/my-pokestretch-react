@@ -1,11 +1,13 @@
-.navbar {
+.text-right {
     margin:2rem;
-    padding:2rem
+    padding:1rem;
+    font-size: 1rem;
+    color: yellow;
 }
 
 .nav-header {
     display: flex;
-    /* justify-content: space-around; */
+    align-items: center;
 }
 
 .logo-and-favs-btn {
@@ -19,4 +21,5 @@
 .fav-img {
     height: 4rem;
     padding: 4rem;
+    padding-left: 1.5rem;
 }

@@ -24,7 +24,7 @@ export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
 
     return (
         <div className="single-card-container">
-            <img src={card.image} alt={card.name} height="150px" />
+            <img src={card.image} alt={card.name} className="card-img"/>
             <div className="cardInfo">
                 <h1 className="title">{card.name}</h1>
                 <p className="type">{card.types}</p>
