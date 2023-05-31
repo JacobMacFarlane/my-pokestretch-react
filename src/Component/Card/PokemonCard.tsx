@@ -6,7 +6,7 @@ type CardProps = {
     chooseCard: (PokeCard: {}) => void
 }
 
-const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
+export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
     const [favorited, setFavorite ] = useState(false)
     const { card, chooseCard } = props
 
@@ -31,5 +31,3 @@ const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
         </div>
     )
 }
-
-export default PokemonCard

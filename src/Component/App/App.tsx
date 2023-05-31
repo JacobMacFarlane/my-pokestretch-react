@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
 import { cleanData } from '../../utilites';
-import Header from '../Header/Header';
+import { Header } from '../Header/Header';
 import './App.css';
-import PokemonCard from '../Card/PokemonCard';
+import { PokemonCard } from '../Card/PokemonCard';
 
 export type PokeCard = {
   image: string
