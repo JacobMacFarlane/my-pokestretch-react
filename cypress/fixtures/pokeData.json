@@ -1,4 +1,5 @@
-[{
+{
+    "data": [{
     "id": "dp3-1",
     "name": "Ampharos",
     "supertype": "Pokémon",
@@ -289,4 +290,4 @@
             "reverseHoloAvg30": 1.37
         }
     }
-}]
+}]}

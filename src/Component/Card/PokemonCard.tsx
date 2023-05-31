@@ -14,6 +14,8 @@ export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
         if (!favorited) {
             setFavorite(true)
             chooseCard(card)
+        } else {
+            setFavorite(false)
         }
     }
 
@@ -24,10 +26,12 @@ export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
                 <h1 className="title">{card.name}</h1>
                 <p className="type">{card.types}</p>
             </div>
-            { favorited === true ? <>the Button works</> : null }
             <button 
+            className="favorite-button"
             name={card.name} 
-            onClick={()=> handleEvent()} >Favorite</button>
+            onClick={()=> handleEvent()} 
+                { favorited  ? "Unfavorite" : "Favorite" }
+            </button>
         </div>
     )
 }
