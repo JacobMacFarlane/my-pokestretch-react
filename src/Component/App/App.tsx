@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
 import { cleanData } from '../../utilites';
-import { Header } from '../Header/Header';
+import Header from '../Header/Header';
 import './App.css';
 import PokemonCard from '../Card/PokemonCard';
 
 export type PokeCard = {
   image: string
-  name : string,
+  name: string
   types: string[]
   cardId: string
 }
 
-function App() {
-  const [allCards, setCards] = useState([])
+const App: React.FC = () => {
+  const [allCards, setCards] = useState<PokeCard[]>([])
   const [favorites, setFavorites] = useState<PokeCard[]>([])
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(true)
@@ -32,11 +32,12 @@ function App() {
           throw new Error()
         }
     }
-    catch (error) {
-      console.error('Error:', error);
+    catch (error: any) {
+      // console.error('Error:', error);
+      setError(error)
     }
   }
-  const chooseCard = ( pokemon: any ) => {
+  const chooseCard = ( pokemon: PokeCard ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
     console.log(favorites, 'this is favorites!!')

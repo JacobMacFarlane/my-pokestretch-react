@@ -1,6 +1,7 @@
 import React from "react";
+import './Header.css'
 
-export const Header = () => {
+const Header: React.FC = () => {
   return (
     <nav className="navbar">
       <h1 className="banner">POKEMON CARDS!</h1>
@@ -8,3 +9,5 @@ export const Header = () => {
     </nav>
   )
 }
+
+export default Header
