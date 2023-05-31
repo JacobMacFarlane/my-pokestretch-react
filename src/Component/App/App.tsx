@@ -37,12 +37,19 @@ const App: React.FC = () => {
       setError(error)
     }
   }
+
   const chooseCard = ( pokemon: PokeCard ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
-    console.log(favorites, 'this is favorites!!')
-    console.log(allCards, 'allcards')
+    // console.log(favorites, 'this is favorites!!')
+    // console.log(allCards, 'allcards')
    }
+
+   const removeFavorite = (cardToRemove : PokeCard) => {
+    const index = favorites.findIndex(card => card.cardId === cardToRemove.cardId)
+    favorites.splice(index, 1)
+  }
+
   useEffect(()=> {
     fetchAllCards()
   }, [] )
@@ -53,8 +60,8 @@ const App: React.FC = () => {
       {loading && <div className='loading-text'>Loading...</div>}
 
       <Switch> 
-        <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard}/> }/>
-        <Route exact path='/favorites' render={(props : {}) => <Main data={ favorites } chooseCard={chooseCard}/> }/>
+        <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
+        <Route exact path='/favorites' render={(props : {}) => <Main data={ favorites } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
       </Switch>
     </section>
   );

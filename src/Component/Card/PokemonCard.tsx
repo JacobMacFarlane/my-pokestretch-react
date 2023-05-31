@@ -3,18 +3,20 @@ import { PokeCard } from "../App/App";
 
 type CardProps = {
     card : PokeCard
-    chooseCard: (PokeCard: {}) => void
+    chooseCard: (PokeCard: PokeCard) => void
+    removeFavorite: (card : PokeCard) => void
 }
 
 export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
     const [favorited, setFavorite ] = useState(false)
-    const { card, chooseCard } = props
+    const { card, chooseCard, removeFavorite } = props
 
     const handleEvent =  () => {
         if (!favorited) {
             setFavorite(true)
             chooseCard(card)
         } else {
+            removeFavorite(card)
             setFavorite(false)
         }
     }
@@ -29,7 +31,7 @@ export const PokemonCard: React.FC<CardProps> = ( props  : CardProps ) => {
             <button 
             className="favorite-button"
             name={card.name} 
-            onClick={()=> handleEvent()} 
+            onClick={()=> handleEvent()}>
                 { favorited  ? "Unfavorite" : "Favorite" }
             </button>
         </div>

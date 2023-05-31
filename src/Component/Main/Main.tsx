@@ -6,7 +6,8 @@ import './Main.css';
 
 interface MainProps {
   data: PokeCard[];
-  chooseCard: any;
+  chooseCard: (pokemon: PokeCard)=> void;
+  removeFavorite: (card: PokeCard)=> void;
 }
 
 export const Main: FC<MainProps> = (props) => {
@@ -17,15 +18,16 @@ export const Main: FC<MainProps> = (props) => {
         key={pokemon.cardId}
         card={pokemon}
         chooseCard={props.chooseCard}
+        removeFavorite={props.removeFavorite}
       />
     );
   });
 
   return (
     <main className="main-container">
-      <nav>
+      {/* <nav>
         <NavLink to="/favorites">Favorites</NavLink>
-      </nav>
+      </nav> */}
       {cards}
     </main>
   );
