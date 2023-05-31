@@ -1,18 +1,24 @@
-import React from "react";
-import './Header.css'
-import { Link } from "react-router-dom"
+import React from 'react';
+import './Header.css';
+import { Link } from 'react-router-dom';
+import pkmntitle from '../../assets/pkmn-deck-builder-2.png';
+import favs from '../../assets/favs-text.png';
 
 export const Header: React.FC = () => {
   return (
-    <header>
-      <Link to="/">
-        <img src="" alt="Logo" />
-      </Link>
-      <nav className="navbar">
-        <Link to="/favorites">Favorites</Link>
-        <h1 className="banner">POKEMON CARDS!</h1>
+    <header className="nav-header">
+      <div className="logo-and-favs-btn">
+        <Link to="/">
+          <img src={pkmntitle} className="logo-img" alt="Logo" />
+        </Link>
+        <Link to="/favorites">
+          <img src={favs} className="fav-img" />
+        </Link>
+      </div>
+      <div className="text-right">
+        <h1 className="banner">Welcome, Trainer!</h1>
         <h3>Browse cards and build your deck</h3>
-      </nav>
+      </div>
     </header>
-  )
-}
+  );
+};
