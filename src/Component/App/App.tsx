@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import { Main } from '../Main/Main';
 import { cleanData } from '../../utilites';
 import { Header } from '../Header/Header';
+import { ErrorComp } from '../Error/Error';
 import './App.css';
 import { PokemonCard } from '../Card/PokemonCard';
 
@@ -16,7 +17,7 @@ export type PokeCard = {
 const App: React.FC = () => {
   const [allCards, setCards] = useState<PokeCard[]>([])
   const [favorites, setFavorites] = useState<PokeCard[]>([])
-  const [error, setError] = useState('')
+  const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
  
   const fetchAllCards = async () => {
@@ -34,7 +35,7 @@ const App: React.FC = () => {
     }
     catch (error: any) {
       // console.error('Error:', error);
-      setError(error)
+      setError(true)
     }
   }
 
@@ -64,6 +65,7 @@ const App: React.FC = () => {
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
         <Route exact path='/favorites' render={(props : {}) => <Main data={ favorites } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
+        <Route path="*" render={() => <ErrorComp />} />
       </Switch>
     </section>
   );
