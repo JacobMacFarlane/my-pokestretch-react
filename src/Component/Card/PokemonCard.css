@@ -1,5 +1,31 @@
+.single-card-container {
+    position: relative; 
+}
+
 .card-img {
     height: 24rem;
     padding: 1rem;
     text-align: center;
+    position: relative;
 }
+
+.stamp {
+    width:4rem;
+    position: absolute;
+    margin: 2rem;
+    margin-top: 3rem;
+    z-index: 1;
+}
+
+.single-card-container  .favorite-button {
+    border: 1.5px solid blue;
+    border-radius: 2px;
+    color: yellow;
+    font-family: 'Pokemon Classic';
+}
+
+.single-card-container  .favorite-button:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
