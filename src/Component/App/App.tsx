@@ -30,6 +30,7 @@ const App: React.FC = () => {
           setCards(data);
           setLoading(false)
         } else {
+          setLoading(false)
           throw new Error()
         }
     }
