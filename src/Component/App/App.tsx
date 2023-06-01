@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const fetchAllCards = async () => {
     try {
       
-      const response = await fetch('https://api.pokemontcg.io/v2/cars/');
+      const response = await fetch('https://api.pokemontcg.io/v2/cards/');
         if (response.ok) {
           let data  = await response.json();
           data = cleanData(data.data)

@@ -10,9 +10,19 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
-  it('should ', () => {
-    cy.url().should('include', '/')
-  })
+  // it('should display that there is an error when there is an error', () => {
+  //   cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
+  //     statusCode: 500,
+  //     body: {
+  //       error: "Internal Server Error",
+  //     },
+  //   }).as("serverError");
+
+  //   cy.wait("@serverError").then(({ response }) => {
+  //     expect(response.statusCode).to.equal(500);
+  //     expect(response.body.error).to.equal("Internal Server Error");
+  //   })
+  // })
 
   it('should render a nav bar', () => {
     cy.get('.nav-header')
