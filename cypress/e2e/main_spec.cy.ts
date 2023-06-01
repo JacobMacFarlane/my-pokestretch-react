@@ -10,23 +10,52 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
+  // it('should display that there is an error when there is an error', () => {
+  //   cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
+  //     statusCode: 500,
+  //     body: {
+  //       error: "Internal Server Error",
+  //     },
+  //   }).as("serverError");
+
+  //   cy.wait("@serverError").then(({ response }) => {
+  //     expect(response.statusCode).to.equal(500);
+  //     expect(response.body.error).to.equal("Internal Server Error");
+  //   })
+  // })
+
+  it('should render a nav bar', () => {
+    cy.get('.nav-header')
+      .should('be.visible')
+      .should('have.descendants', 'img')
+      .should('be.visible')
+  });
+
   it('should render a heading', () => {
-    cy.contains("h1", "POKEMON CARDS!")
-    cy.contains("h3", "Browse cards and build your deck")
+    cy.get('.nav-header')
+      .contains("h1", "Welcome, Trainer!")
+  
+    cy.get('.nav-header')
+      .contains("h3", "Browse cards and build your deck")
   })
 
-  it('should render a link to navigate to the favorites page', () => {
-    cy.get('nav')
-      .contains("Favorites")
+  it('should navigate to the favorites page when user clicks on favorites', () => {
+    cy.get('.fav-img').click()
+      .url().should('include', '/favorites')
+  })
+
+  it('should navigate to the home page when user clicks on "Pokemon Deck Builder"', () => {
+    cy.get('.logo-img').click()
+      .url().should('include', '/')
   })
 
   it('should display a list of Pokemon cards', () => {
     cy.get('main')
-    .contains("Ampharos")
+      .contains("Ampharos")
     cy.get('main')
-    .contains("Aerodactyl")
+      .contains("Aerodactyl")
     cy.get('main')
-    .contains("Caterpie")
+      .contains("Caterpie")
 
     cy.get('main').find('.single-card-container').should('have.lengthOf', 3)
   })
@@ -46,5 +75,30 @@ describe('Main Page', () => {
     cy.get('.favorite-button')
       .should('be.visible') 
       .contains("Favorite")
+  })
+
+  it('should change the name of the favorite button to "Unfavorite" when button is clicked', () => {
+    cy.get('.single-card-container').first()
+      .find('.favorite-button').click()
+      .should('contain', 'Unfavorite');
+  });
+
+  it('should change the name of the favorite button to "Favorite" when button is clicked an even number of times', () => {
+    cy.get('.single-card-container').first()
+      .find('.favorite-button').click().click()
+      .should('contain', 'Favorite');
+  })
+
+  it('should display a pokeball icon on the card when the card is favorited', () => {
+    cy.get('.favorite-button').first().click()
+      .get('.single-card-container').first()
+      .should('have.descendants', 'svg')
+      .should('be.visible')
+  })
+
+  it('should not display a pokeball icon when the card is unfavorited', () => {
+    cy.get('.favorite-button').first().click().click()
+      .get('.single-card-container').first()
+      .should('not.have.descendants', 'svg')
   })
 })

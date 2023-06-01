@@ -29,12 +29,13 @@ const App: React.FC = () => {
           setCards(data);
           setLoading(false)
         } else {
+          setLoading(false)
           throw new Error()
         }
     }
     catch (error: any) {
-      // console.error('Error:', error);
       setError(error)
+      throw new Error(error)
     }
   }
 
