@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# pokeStretch README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Abstract
+This group project challenged us to learn a new technology, TypeScript, in less than a week. We decided to utilize TypeScript, along with React and React Router, to create a Pokémon card deck builder. The application allows users to browse and favorite Pokémon cards, providing an interactive and enjoyable experience for Pokémon fans.
 
-## Available Scripts
+## Challenges and Struggles
+Learning a new technology, TypeScript, within a short timeframe posed several challenges and struggles for our team:
 
-In the project directory, you can run:
+### Syntax and Typing: 
+TypeScript introduces a new syntax and requires explicit typing. We had to familiarize ourselves with the TypeScript syntax and understand how to apply types to variables, functions, and components.
 
-### `npm start`
+### Type Errors: 
+TypeScript enforces strict typing, which meant we had to ensure that all variables and functions were properly typed. We encountered type errors and had to debug and fix them to ensure the code was valid.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Integration with React: 
+Integrating TypeScript with React required understanding how to apply types to React components, props, and state. We had to refactor our existing React components to include TypeScript types and ensure proper integration with React features.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Tooling and Configuration: 
+Setting up TypeScript in our project required configuring the TypeScript compiler, updating project files, and installing TypeScript-specific tooling. We had to learn how to use TypeScript-specific tools and understand their role in the development workflow.
 
-### `npm test`
+### Learning Curve: 
+Learning a new technology always involves a learning curve. We had to dedicate time and effort to understand TypeScript concepts, best practices, and how to apply them effectively in our project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wins
+Despite the challenges faced, our team achieved several wins while learning and implementing TypeScript:
 
-### `npm run build`
+### Improved Code Quality: 
+TypeScript's static typing helped catch errors early in the development process. By ensuring variables and functions were properly typed, we improved the overall code quality and reduced runtime errors.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Enhanced Developer Experience: 
+TypeScript's tooling and IDE support improved our development experience. Features such as autocompletion, type checking, and error highlighting helped us write more robust and error-free code.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Better Collaboration: 
+TypeScript's type annotations made the codebase more self-documenting, which facilitated better collaboration among team members. The explicit types helped communicate intent and reduced the need for extensive code comments.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Reduced Debugging Time: 
+TypeScript's type system helped catch many potential bugs during development, reducing the time spent on debugging. The compiler's feedback guided us in fixing issues early on, improving the overall development efficiency.
 
-### `npm run eject`
+### Increased Confidence in Refactoring: 
+With TypeScript, refactoring became less daunting. The static typing allowed us to make changes with confidence, knowing that the TypeScript compiler would catch any breaking changes or inconsistencies.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Core Components Worked On
+Here are the core components that each team member worked on:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### App
+- Responsible for fetching Pokémon card data from the Pokémon TCG API.
+- Manages the state of all cards, favorites, loading, and error handling.
+- Renders the main section of the application, including the Header, Loading and Error components, and the Switch with different routes.
+### Main
+- Renders the main container that displays the Pokémon cards.
+- Receives data and callback functions as props to handle card selection and favoriting.
+- Maps over the card data to create individual PokemonCard components.
+### PokemonCard
+- Represents a single Pokémon card.
+- Handles the favoriting functionality, allowing users to add or remove cards from their favorites.
+- Displays the card image, name, and type.
+### Utilities
+- Contains utility functions used within the application.
+- Provides the cleanData function to format and clean the card data received from the API.
+### Cypress Testing
+- Contains Cypress tests for the Favorites Page and Main Page.
+- Tests the functionality of favoriting and unfavoriting cards, as well as the rendering of card details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installation and Usage
+To run the project locally, follow these steps:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Clone the repository: git clone https://github.com/your-repo.git
+Change into the project directory: cd your-repo
+Install dependencies: npm install
+Start the development server: npm start
+Open your browser and visit http://localhost:3000
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Conclusion
+This group project pushed us to learn TypeScript in a short period and apply it to a Pokémon card deck builder. Despite the challenges, we successfully implemented TypeScript, React, and React Router to create an engaging and user-friendly application. The project not only improved our code quality and developer experience but also fostered better collaboration and increased confidence in refactoring. We are proud of our achievements and the knowledge gained through this experience.
