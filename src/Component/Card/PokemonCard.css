@@ -1,31 +1,37 @@
-.single-card-container {
-    position: relative; 
+ .single-card-container {
+    /* position: relative;  */
+}
+
+.card-and-stamp {
+    /* position: relative; */
 }
 
 .card-img {
     height: 24rem;
     padding: 1rem;
     text-align: center;
-    position: relative;
+    /* position: relative; */
 }
 
 .stamp {
-    width:4rem;
+    width:5rem;
     position: absolute;
     margin: 2rem;
     margin-top: 3rem;
-    z-index: 1;
+    z-index: 10;
 }
 
-.single-card-container  .favorite-button {
-    border: 1.5px solid blue;
+ .favorite-button {
+    background-image: linear-gradient(-180deg, #4d4dc1, #3021bb);
     border-radius: 2px;
     color: yellow;
     font-family: 'Pokemon Classic';
+    height: 40px;
+    width: 10rem;
+    padding: 0 20px;
 }
 
-.single-card-container  .favorite-button:hover {
-    background-color: yellow;
+button:hover {
     cursor: pointer;
+    color:black
 }
-
