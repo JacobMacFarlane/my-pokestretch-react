@@ -6,6 +6,7 @@ import { Header } from '../Header/Header';
 import { ErrorComp } from '../Error/Error';
 import './App.css';
 import { PokemonCard } from '../Card/PokemonCard';
+import { fetchAllCards } from '../../apiCalls';
 
 export type PokeCard = {
   image: string
@@ -20,25 +21,6 @@ const App: React.FC = () => {
   const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(true)
  
-  const fetchAllCards = async () => {
-    try {
-      
-      const response = await fetch('https://api.pokemontcg.io/v2/cards/');
-        if (response.ok) {
-          let data  = await response.json();
-          data = cleanData(data.data)
-          setCards(data);
-          setLoading(false)
-        } else {
-          setLoading(false)
-          throw new Error()
-        }
-    }
-    catch (error: any) {
-      setError(error)
-    }
-  }
-
   const chooseCard = ( pokemon: PokeCard ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
@@ -50,8 +32,18 @@ const App: React.FC = () => {
   }
 
   useEffect(()=> {
-    fetchAllCards()
-  }, [] )
+    try {
+      fetchAllCards()
+        .then(data => {
+          const cardData = cleanData(data.data)
+          setCards(cardData)
+          setLoading(false)
+        })
+    } catch(err: any) {
+      // this guy's catching the throw!
+      setError(err)
+    }
+  }, [])
 
   return (
     <section className='main'>
