@@ -25,9 +25,6 @@ export const Main: FC<MainProps> = (props) => {
 
   return (
     <main className="main-container">
-      {/* <nav>
-        <NavLink to="/favorites">Favorites</NavLink>
-      </nav> */}
       {cards}
     </main>
   );

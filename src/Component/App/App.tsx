@@ -17,7 +17,7 @@ export type PokeCard = {
 const App: React.FC = () => {
   const [allCards, setCards] = useState<PokeCard[]>([])
   const [favorites, setFavorites] = useState<PokeCard[]>([])
-  const [error, setError] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
   const [loading, setLoading] = useState(true)
  
   const fetchAllCards = async () => {
@@ -35,23 +35,18 @@ const App: React.FC = () => {
         }
     }
     catch (error: any) {
-      // console.error('Error:', error);
-      setError(true)
+      setError(error)
     }
   }
 
   const chooseCard = ( pokemon: PokeCard ) => {
     const newFavState = [...favorites, pokemon]
     setFavorites(newFavState)
-    // console.log(favorites, 'this is favorites!!')
-    // console.log(allCards, 'allcards')
    }
 
    const removeFavorite = (cardToRemove : PokeCard) => {
     const updatedFavs = favorites.filter((card) => card.cardId !== cardToRemove.cardId)
     setFavorites(updatedFavs)
-    // const index = favorites.findIndex(card => card.cardId === cardToRemove.cardId)
-    // favorites.splice(index, 1)
   }
 
   useEffect(()=> {
@@ -62,7 +57,7 @@ const App: React.FC = () => {
     <section className='main'>
       <Header />
       {loading && <div className='loading-text'>Loading...</div>}
-
+      {error && <div className='error-text'>{error.name}: {error.message}</div>}
       <Switch> 
         <Route exact path='/' render={(props : {}) => <Main data={ allCards } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
         <Route exact path='/favorites' render={(props : {}) => <Main data={ favorites } chooseCard={chooseCard} removeFavorite={removeFavorite}/> }/>
