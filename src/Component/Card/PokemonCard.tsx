@@ -25,20 +25,29 @@ export const PokemonCard: React.FC<CardProps> = (props: CardProps) => {
 
   return (
     <section className="single-card-container">
-        {favorited && (
-            <img className="stamp" src={stamp}/>
-            )}
-        <img src={card.image} alt={card.name} className="card-img"/>
-        <div className="cardInfo">
-            <h1 className="title">{card.name}</h1>
-            <p className="type">{card.types}</p>
+      {favorited && (
+        <div className="card-and-stamp">
+          <img className="stamp" src={stamp} />
+          <img src={card.image} alt={card.name} className="card-img" />
         </div>
-        <button
+      )}
+
+      {!favorited && (
+        <img src={card.image} alt={card.name} className="card-img" />
+      )}
+
+      <div className="cardInfo">
+        <h1 className="title">{card.name}</h1>
+        <p className="type">{card.types}</p>
+      </div>
+
+      <button
         className="favorite-button"
         name={card.name}
-        onClick={()=> handleEvent()}>
-            { favorited  ? "Unfavorite" : "Favorite" }
-        </button>
+        onClick={() => handleEvent()}
+      >
+        {favorited ? 'Unfavorite' : 'Favorite'}
+      </button>
     </section>
   );
 };
