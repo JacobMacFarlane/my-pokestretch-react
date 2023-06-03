@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { NavLink } from 'react-router-dom';
 import { PokemonCard } from '../Card/PokemonCard';
 import { PokeCard } from '../App/App';
 import './Main.css';
@@ -10,9 +9,9 @@ interface MainProps {
   removeFavorite: (card: PokeCard)=> void;
 }
 
-export const Main: FC<MainProps> = (props) => {
+export const Main: FC<MainProps> = (props: MainProps) => {
   const cards: JSX.Element[] = props.data.map
-  ((pokemon: PokeCard, index: number) => {
+  ((pokemon: PokeCard) => {
     return (
       <PokemonCard
         key={pokemon.cardId}

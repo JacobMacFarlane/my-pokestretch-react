@@ -1,16 +1,7 @@
- .single-card-container {
-    /* position: relative;  */
-}
-
-.card-and-stamp {
-    /* position: relative; */
-}
-
 .card-img {
     height: 24rem;
     padding: 1rem;
     text-align: center;
-    /* position: relative; */
 }
 
 .stamp {
