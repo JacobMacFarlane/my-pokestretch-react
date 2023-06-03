@@ -10,19 +10,14 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
-  // it('should display that there is an error when there is an error', () => {
-  //   cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
-  //     statusCode: 500,
-  //     body: {
-  //       error: "Internal Server Error",
-  //     },
-  //   }).as("serverError");
-
-  //   cy.wait("@serverError").then(({ response }) => {
-  //     expect(response.statusCode).to.equal(500);
-  //     expect(response.body.error).to.equal("Internal Server Error");
-  //   })
-  // })
+  it('should display an error message on the DOM when there is an error', () => {
+    cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
+      statusCode: 500,
+      fixture: "pokeData.json"})
+      .visit("http://localhost:3000/")
+      .get('div')
+      .should('have.class', 'error-text')
+  })
 
   it('should render a nav bar', () => {
     cy.get('.nav-header')
@@ -92,13 +87,13 @@ describe('Main Page', () => {
   it('should display a pokeball icon on the card when the card is favorited', () => {
     cy.get('.favorite-button').first().click()
       .get('.single-card-container').first()
-      .should('have.descendants', 'svg')
+      .should('have.descendants', '.card-and-stamp')
       .should('be.visible')
   })
 
   it('should not display a pokeball icon when the card is unfavorited', () => {
     cy.get('.favorite-button').first().click().click()
       .get('.single-card-container').first()
-      .should('not.have.descendants', 'svg')
+      .should('not.have.descendants', '.card-and-stamp')
   })
 })
