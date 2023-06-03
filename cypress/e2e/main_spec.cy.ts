@@ -15,8 +15,8 @@ describe('Main Page', () => {
       statusCode: 500,
       fixture: "pokeData.json"})
       .visit("http://localhost:3000/")
-      .get('main')
-      .find('.error-text')
+      .get('div')
+      .should('have.class', 'error-text')
   })
 
   it('should render a nav bar', () => {
