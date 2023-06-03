@@ -36,4 +36,9 @@ describe('Favorites Page', () => {
       cy.get('.favorite-button').click()
       cy.get('.single-card-container').should('not.exist')
     })
+
+    it('should navigate to the home page when user clicks on "Pokemon Deck Builder"', () => {
+      cy.get('.logo-img').click()
+        .url().should('include', '/')
+    })
 })
