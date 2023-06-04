@@ -7,7 +7,6 @@ export const ErrorComp: React.FC = () => {
             <h2>This isnt our page</h2>
             <Link to="/">
                 <h3 className="go-back">Click here to catch em all!</h3>
-                {/* make this the same font we have in header */}
             </Link>
         </div>
     )
