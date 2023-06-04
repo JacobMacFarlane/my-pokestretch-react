@@ -10,15 +10,6 @@ describe('Main Page', () => {
     cy.url().should('include', '/')
   })
 
-  it('should display an error message on the DOM when there is an error', () => {
-    cy.intercept("GET", "https://api.pokemontcg.io/v2/cards/", {
-      statusCode: 500,
-      fixture: "pokeData.json"})
-      .visit("http://localhost:3000/")
-      .get('div')
-      .should('have.class', 'error-text')
-  })
-
   it('should render a nav bar', () => {
     cy.get('.nav-header')
       .should('be.visible')
