@@ -75,7 +75,7 @@ This group project pushed us to learn TypeScript in a short period and apply it 
 
 ## Contributors 
 
-Adam Meza - [Github](https://github.com/adam-meza)
-Sara Park - [Github](https://github.com/soy-park)
-Jacob MacFarlane - [Github](https://github.com/JacobMacFarlane)
-Bri Bourassa - [Github](https://github.com/BriBourassa)
+- Adam Meza - [Github](https://github.com/adam-meza) | [LinkedIn](https://www.linkedin.com/in/adam-meza/)
+- Sara Park - [Github](https://github.com/soy-park) | [LinkedIn](https://www.linkedin.com/in/soyeon-sara-park/)
+- Jacob MacFarlane - [Github](https://github.com/JacobMacFarlane) | [LinkedIn](https://www.linkedin.com/in/jacob-macfarlane-052593261/)
+- Bri Bourassa - [Github](https://github.com/BriBourassa) | [LinkedIn](https://www.linkedin.com/in/brianne-bourassa/)
