@@ -72,3 +72,10 @@ Open your browser and visit http://localhost:3000
 
 ## Conclusion
 This group project pushed us to learn TypeScript in a short period and apply it to a Pokémon card deck builder. Despite the challenges, we successfully implemented TypeScript, React, and React Router to create an engaging and user-friendly application. The project not only improved our code quality and developer experience but also fostered better collaboration and increased confidence in refactoring. We are proud of our achievements and the knowledge gained through this experience.
+
+## Contributors 
+
+Adam Meza - [Github](https://github.com/adam-meza)
+Sara Park - [Github](https://github.com/soy-park)
+Jacob MacFarlane - [Github](https://github.com/JacobMacFarlane)
+Bri Bourassa - [Github](https://github.com/BriBourassa)
