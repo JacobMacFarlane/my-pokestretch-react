@@ -3,6 +3,13 @@
 ## Project Abstract
 This group project challenged us to learn a new technology, TypeScript, in less than a week. We decided to utilize TypeScript, along with React and React Router, to create a Pokémon card deck builder. The application allows users to browse and favorite Pokémon cards, providing an interactive and enjoyable experience for Pokémon fans.
 
+### Installation and Usage
+[Click this link](https://my-pokestretch-react.vercel.app/)
+
+### Preview:
+
+![preview](https://github.com/JacobMacFarlane/my-pokestretch-react/assets/111149043/4dd614e5-aaf4-4ecf-8745-58ba3fadd63d)
+
 ## Challenges and Struggles
 Learning a new technology, TypeScript, within a short timeframe posed several challenges and struggles for our team:
 
@@ -60,9 +67,6 @@ Here are the core components that each team member worked on:
 ### Cypress Testing
 - Contains Cypress tests for the Favorites Page and Main Page.
 - Tests the functionality of favoriting and unfavoriting cards, as well as the rendering of card details.
-
-### Installation and Usage
-[Click this link](https://my-pokestretch-react.vercel.app/)
 
 ## Conclusion
 This group project pushed us to learn TypeScript in a short period and apply it to a Pokémon card deck builder. Despite the challenges, we successfully implemented TypeScript, React, and React Router to create an engaging and user-friendly application. The project not only improved our code quality and developer experience but also fostered better collaboration and increased confidence in refactoring. We are proud of our achievements and the knowledge gained through this experience.
