@@ -62,13 +62,7 @@ Here are the core components that each team member worked on:
 - Tests the functionality of favoriting and unfavoriting cards, as well as the rendering of card details.
 
 ### Installation and Usage
-To run the project locally, follow these steps:
-
-Clone the repository: git clone https://github.com/your-repo.git
-Change into the project directory: cd your-repo
-Install dependencies: npm install
-Start the development server: npm start
-Open your browser and visit http://localhost:3000
+[Click this link](https://my-pokestretch-react.vercel.app/)
 
 ## Conclusion
 This group project pushed us to learn TypeScript in a short period and apply it to a Pokémon card deck builder. Despite the challenges, we successfully implemented TypeScript, React, and React Router to create an engaging and user-friendly application. The project not only improved our code quality and developer experience but also fostered better collaboration and increased confidence in refactoring. We are proud of our achievements and the knowledge gained through this experience.
